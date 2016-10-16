@@ -74,24 +74,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.vertical).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-            }
-        });
-
-        findViewById(R.id.horizontal).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
-            }
-        });
-
-        findViewById(R.id.grid).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.grid2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 recyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this, 3));
+            }
+        });
+
+        findViewById(R.id.grid3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GridLayoutManager new_grid = new GridLayoutManager(MainActivity.this, 3);
+                new_grid.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                    @Override
+                    public int getSpanSize(int position) {
+                        switch (position % 7){
+                            case 1:
+                            case 5:
+                            case 6:
+                                return 3;
+                            default:
+                                return 1;
+                        }
+                    }
+                });
+                recyclerView.setLayoutManager(new_grid);
             }
         });
     }

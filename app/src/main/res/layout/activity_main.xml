@@ -13,19 +13,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <Button
-            android:text="Vertical"
-            android:id="@+id/vertical"
+            android:text="Grid2"
+            android:id="@+id/grid2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
         <Button
-            android:text="Horizontal"
-            android:id="@+id/horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:text="Grid"
-            android:id="@+id/grid"
+            android:text="Grid3"
+            android:id="@+id/grid3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
